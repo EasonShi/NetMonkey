@@ -18,7 +18,7 @@ public class MainController implements Initializable {
     }
 
     public void startTask(ActionEvent actionEvent) {
-        NetService.start("http://isujin.com",1,null);
+        NetService.start("http://isujin.com/",1,null,"苏瑾");
     }
 
     public void exitApp(ActionEvent actionEvent) {

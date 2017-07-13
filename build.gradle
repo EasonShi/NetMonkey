@@ -29,5 +29,7 @@ dependencies {
 	compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
 	// https://mvnrepository.com/artifact/com.google.guava/guava
 	compile group: 'com.google.guava', name: 'guava', version: '22.0'
+// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 
 }
