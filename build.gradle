@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		
+	}
+	repositories {
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
+		mavenCentral()
+	}
+	dependencies {
+		
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
+	mavenCentral()
+}
+
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.jsoup/jsoup
+	compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
+	// https://mvnrepository.com/artifact/com.google.guava/guava
+	compile group: 'com.google.guava', name: 'guava', version: '22.0'
+
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stone.netmonkey.controller.MainController">
+   <children>
+      <MenuBar prefWidth="700.0">
+        <menus>
+        <Menu mnemonicParsing="false" text="项目">
+          <items>
+            <MenuItem mnemonicParsing="false" text="新建项目" />
+            <MenuItem mnemonicParsing="false" text="打开项目" />
+            <MenuItem mnemonicParsing="false" text="退出" onAction="#exitApp"/>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="任务">
+          <items>
+            <MenuItem mnemonicParsing="false" text="开始" onAction="#startTask"/>
+            <MenuItem mnemonicParsing="false" text="结束" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+        </menus>
+      </MenuBar>
+      <ListView layoutY="29.0" prefHeight="450.0" prefWidth="700.0" />
+   </children>
+   <rotationAxis>
+      <Point3D />
+   </rotationAxis>
+</Pane>
