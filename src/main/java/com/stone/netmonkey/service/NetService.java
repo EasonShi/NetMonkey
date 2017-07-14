@@ -1,4 +1,4 @@
-package com.stone.netmonkey;
+package com.stone.netmonkey.service;
 
 import com.google.common.io.ByteStreams;
 import com.google.common.io.Files;
@@ -22,10 +22,10 @@ import java.util.Properties;
  * Created by eason on 17-7-13.
  */
 public class NetService {
-    static String userDir = System.getProperty("user.dir")+"/app-content/";
+    static String userDir = "";
 
     public static void start(String url,int tier,String cookie,String projectName) {
-        userDir+=projectName;
+        userDir=System.getProperty("user.dir")+"/app-content/"+projectName;
         Connection connect = Jsoup.connect(url);
         connect.header("Referer",url);
         connect.header("Origin",url);
@@ -41,7 +41,6 @@ public class NetService {
             for (Element link : links) {
                 String href = link.attr("href");
                 if(href!=null&&!href.isEmpty())saveSource(href,url);
-
             }
             Elements imgs = document.select("img");
             for (Element img : imgs) {
@@ -76,9 +75,6 @@ public class NetService {
             filePath = filePath.replaceAll("//","/");
             fileName = url.substring(url.lastIndexOf("/")+1);
 
-            System.out.println(filePath);
-            System.out.println(fileName);
-
             File fileDir = new File(userDir+filePath);
             if(!fileDir.exists()) fileDir.mkdirs();
 
@@ -86,9 +82,11 @@ public class NetService {
                 CloseableHttpClient httpclient = HttpClients.createDefault();
                 HttpGet httpget = new HttpGet(url);
                 CloseableHttpResponse response = httpclient.execute(httpget);
-                InputStream content = response.getEntity().getContent();
+                int statusCode = response.getStatusLine().getStatusCode();
 
-                Files.write(ByteStreams.toByteArray(content),new File(fileDir.getPath()+fileName));
+                InputStream content = response.getEntity().getContent();
+                byte[] byteArray = ByteStreams.toByteArray(content);
+                Files.write(byteArray,new File(fileDir.getPath()+File.separator+fileName));
             } catch (IOException e) {
                 e.printStackTrace();
             }

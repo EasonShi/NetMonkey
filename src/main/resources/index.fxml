@@ -17,12 +17,12 @@
           <items>
             <MenuItem mnemonicParsing="false" text="新建项目" />
             <MenuItem mnemonicParsing="false" text="打开项目" />
-            <MenuItem mnemonicParsing="false" text="退出" onAction="#exitApp"/>
+            <MenuItem mnemonicParsing="false" onAction="#exitApp" text="退出" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="任务">
           <items>
-            <MenuItem mnemonicParsing="false" text="开始" onAction="#startTask"/>
+            <MenuItem mnemonicParsing="false" onAction="#startTask" text="开始" />
             <MenuItem mnemonicParsing="false" text="结束" />
           </items>
         </Menu>
@@ -34,6 +34,12 @@
         </menus>
       </MenuBar>
       <ListView layoutY="29.0" prefHeight="450.0" prefWidth="700.0" />
+      <ToolBar layoutY="30.0" prefHeight="40.0" prefWidth="700.0">
+        <items>
+          <Button mnemonicParsing="false" text="新建" onAction="#createProject"/>
+            <Button disable="true" mnemonicParsing="false" onAction="#startTask" text="开始" fx:id="startBtn"/>
+        </items>
+      </ToolBar>
    </children>
    <rotationAxis>
       <Point3D />

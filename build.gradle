@@ -14,9 +14,12 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+
+mainClassName = 'com.stone.netmonkey.Main'
 
 repositories {
 	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}

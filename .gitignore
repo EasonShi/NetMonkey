@@ -25,4 +25,4 @@ nbbuild/
 nbdist/
 .nb-gradle/
 temp/
-
+app-content/
