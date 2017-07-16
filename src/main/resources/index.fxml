@@ -33,15 +33,31 @@
         </Menu>
         </menus>
       </MenuBar>
-      <ListView layoutY="29.0" prefHeight="450.0" prefWidth="700.0" />
+
       <ToolBar layoutY="30.0" prefHeight="40.0" prefWidth="700.0">
         <items>
-          <Button mnemonicParsing="false" text="新建" onAction="#createProject"/>
-            <Button disable="true" mnemonicParsing="false" onAction="#startTask" text="开始" fx:id="startBtn"/>
+          <Button mnemonicParsing="false" onAction="#createProject" text="新建" />
+            <Button fx:id="startBtn" disable="true" mnemonicParsing="false" onAction="#startTask" text="开始" />
+            <Button mnemonicParsing="false" onAction="#test" text="测试" />
+            <TextField fx:id="tierTextField" alignment="CENTER" prefHeight="24.0" prefWidth="45.0" promptText="层数" text="1" />
         </items>
       </ToolBar>
+
+      <TableView fx:id="infoTableView" layoutY="68.0" prefHeight="379.0" prefWidth="700.0">
+        <columns>
+          <TableColumn prefWidth="150.0" text="" />
+          <TableColumn prefWidth="450.0" text="" />
+          <TableColumn prefWidth="50.0" text="" />
+        </columns>
+      </TableView>
+      <Pane layoutY="452.0" prefHeight="30.0" prefWidth="700.0">
+         <children>
+            <Label fx:id="projectState" layoutX="16.0" layoutY="3.0" text="当前:无">
+               <padding>
+                  <Insets left="10.0" right="30.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
    </children>
-   <rotationAxis>
-      <Point3D />
-   </rotationAxis>
 </Pane>
